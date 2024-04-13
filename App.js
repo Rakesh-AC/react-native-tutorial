@@ -2,15 +2,25 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import Profile  from './components/profile';
 import {SafeAreaView, SafeAreaProvider} from "react-native-safe-area-context";
+import {s} from  "./App.style";
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
-        <Text style={s.title}>Hello World!</Text>
-        <View style={s.square}>
-          <Text>TEXT </Text>
-        </View>
+      <SafeAreaView style={{ flex:1, flexDirection:"column", justifyContent:"space-evenly", alignItems:"center"}}>
+
+       <View  style={s.box1}>
+        
+       </View>
+
+       <View  style={s.box2}>
+
+       </View>
+
+       <View  style={s.box3}>
+
+       </View>
+
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -18,20 +28,7 @@ export default function App() {
 
 
 
-const s = StyleSheet.create({
-  title : {
-    fontSize:100,
-    marginVertical:15,
-    textAlign:'center',
-    
-  },
-  square:{
-    width:100,
-    height:100,
-    backgroundColor:"green",
-    
-  }
-})
+
 
 
 

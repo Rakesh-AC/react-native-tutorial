@@ -2,17 +2,18 @@ import { StyleSheet } from "react-native";
 
 
 export const s = StyleSheet.create({
-    "title":{
-        color:red,
-        fontSize:100,
+    box1:{
+        height:100, width:100,backgroundColor:"red",
     },
-    
-    "box":{
-        width:100,
-        height:100,
-        color:"light-green"
-    }
+    box2:{
+        height:100, width:100,backgroundColor:"orange",
+    },
+    box3:{
+        height:100, width:100,backgroundColor:"yellow",
+    },
 
-    
-    
+    title:{
+        fontSize:100,
+        color:"yellow"
+    }
 })
