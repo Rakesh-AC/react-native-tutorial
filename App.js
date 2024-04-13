@@ -1,41 +1,37 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import Profile  from './components/profile';
+import {SafeAreaView, SafeAreaProvider} from "react-native-safe-area-context";
+
 export default function App() {
-  const [name, setName] = useState('');
-
-  const handleChangeText = (text) => {
-    setName(text);
-  };
-
   return (
-    <View style={styles.container}>
-      <Text>Hello, {name}!</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={handleChangeText}
-        value={name}
-        placeholder="Enter your name"
-      />
-      <Button title="Greet Me" onPress={() => console.log(`Hello, ${name}!`)} />
-      {/* <StatusBar style="auto" /> */}
-
-      <Profile></Profile>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <Text style={s.title}>Hello World!</Text>
+        <View style={s.square}>
+          <Text>TEXT </Text>
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
+
+const s = StyleSheet.create({
+  title : {
+    fontSize:100,
+    marginVertical:15,
+    textAlign:'center',
+    
   },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
+  square:{
+    width:100,
+    height:100,
+    backgroundColor:"green",
+    
+  }
+})
+
+
+
