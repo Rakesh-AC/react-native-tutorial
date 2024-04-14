@@ -6,14 +6,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, justifyContent: "center", padding:20}}>
-        <ProfilCard
-          firstName="John"
-          lastName="Doe"
-          age={35}
-          description="Python web Developer with 2 years of experience in django"
-          is_alive={true}
-          metaData={{"city":"bengalore", "country": "India" }}
-        />
+        <ProfilCard />
       </SafeAreaView>
     </SafeAreaProvider>
   );
