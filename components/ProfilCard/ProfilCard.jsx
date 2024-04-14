@@ -2,7 +2,8 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import { s } from "./ProfilCard.style";
 import { FontAwesome } from '@expo/vector-icons';
 
-export function ProfilCard() {
+export function ProfilCard({firstName, lastName}) {
+  console.log(firstName);
   return (
     <View style={s.container}>
       <View style={s.header}>
@@ -13,7 +14,7 @@ export function ProfilCard() {
           />
         </View>
         <View style={s.texts}>
-          <Text style={s.name}>Codiku TheDev</Text>
+          <Text style={s.name}>{firstName} {lastName}</Text>
           <Text>
             Hi I am React native developper, let's get in touch, and soon
           </Text>
