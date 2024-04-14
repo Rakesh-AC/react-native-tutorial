@@ -1,25 +1,34 @@
-import { Alert, Text, View } from "react-native";
+import { Alert, Text, View, findNodeHandle, Linking } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import { s } from "./App.style";
 import { ProfilCard } from "./components/ProfilCard/ProfilCard";
-import {AgeCounter} from "./components/AgeCounter/AgeCounter";
 import { useState } from "react";
 
 
 export default function App() {
-
-  let [count, setCount] = useState(0);
-  function Hello(firstName, lastName){
-    Alert.alert("Hello "+ firstName +" "+lastName+"!");
-    setCount(count+1);
+  
+  function goToSocialLinks(socialPressed){
+    if(socialPressed === "github"){
+      console.log("Pressed "+socialPressed);
+      Linking.openURL("https://github.com/Rakesh-AC");
+    }else if(socialPressed === 'linkedin'){
+      console.log("Pressed "+socialPressed)
+      Linking.openURL("https://github.com/Rakesh-AC");
+    }else if(socialPressed === "twitter"){
+      console.log("Pressed "+socialPressed)
+      Linking.openURL("https://github.com/Rakesh-AC");
+    }else{
+      Alert.alert("no social media to selected but still this is function is working ")
+    }
   }
+  
+
+  
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, justifyContent: "center", padding:20}}>
-        <ProfilCard helloCallBackFunc={Hello} firstName="Rakesh" lastName="AC" />
-        <Text style={{fontSize:20}}>we showed alert for {count} times </Text>
+        <ProfilCard  firstName="Rakesh" lastName="AC" onPressSocialMedia={goToSocialLinks} />
       </SafeAreaView>
     </SafeAreaProvider>
   );
-  
+
 }
