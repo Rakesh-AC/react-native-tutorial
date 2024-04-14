@@ -17,7 +17,7 @@ export function ProfilCard() {
         <View style={s.texts}>
           <Text style={s.name}>Jhon Doe</Text>
           <Text>
-            Hi I am React native developper, let's get in touch, and soon
+            Hi I am React native developer, let's get in touch, and soon 
           </Text>
         </View>
       </View>
