@@ -2,7 +2,11 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import { s } from "./ProfilCard.style";
 import { FontAwesome } from '@expo/vector-icons';
 
-export function ProfilCard() {
+export function ProfilCard({firstName, lastName,helloCallBackFunc}) {
+
+  function caller(){
+    helloCallBackFunc(firstName, lastName);
+  }
 
   
   return (
@@ -15,7 +19,10 @@ export function ProfilCard() {
           />
         </View>
         <View style={s.texts}>
-          <Text style={s.name}>Jhon Doe</Text>
+          <TouchableOpacity onPress={caller}>
+            <Text style={s.name}>{firstName} {lastName}</Text>
+          </TouchableOpacity>
+          
           <Text>
             Hi I am React native developer, let's get in touch, and soon 
           </Text>
